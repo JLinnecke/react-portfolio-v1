@@ -104,6 +104,11 @@ function Hero() {
 
 function Projects() {
   const [selectedSkill, setSelectedSkill] = useState("ALL");
+  const [selectedProjectImage, setSelectedProjectImage] = useState(null);
+
+  function handleClose() {
+    setSelectedProjectImage(null);
+  }
 
   const filteredProjects =
     selectedSkill === "ALL"
@@ -124,14 +129,27 @@ function Projects() {
         <Button onClick={() => setSelectedSkill("React")}>React</Button>
         <p>Aktiver filter: {selectedSkill}</p>
       </div>
+
       {filteredProjects.map((project) => (
-        <ProjectCard project={project} key={project.title} />
+        <ProjectCard
+          project={project}
+          key={project.title}
+          selectedProjectImage={selectedProjectImage}
+          setSelectedProjectImage={setSelectedProjectImage}
+        />
       ))}
+      {selectedProjectImage && (
+        <Modal image={selectedProjectImage} onClose={handleClose}></Modal>
+      )}
     </section>
   );
 }
 
-function ProjectCard({ project }) {
+function ProjectCard({
+  project,
+  selectedProjectImage,
+  setSelectedProjectImage,
+}) {
   function handleGitHub() {
     window.open(project.github, "_blank");
   }
@@ -147,7 +165,11 @@ function ProjectCard({ project }) {
         <p>{project.description}</p>
       </div>
       <div className="project-img">
-        <img src={project.image} alt={project.title} />
+        <img
+          src={project.image}
+          alt={project.title}
+          onClick={() => setSelectedProjectImage(project.image)}
+        />
         <div className="btn-project">
           <Button className="btn" onClick={handleLiveDemo}>
             Live demo
@@ -180,10 +202,7 @@ function Certifications() {
         />
       ))}
       {selectedCertificate && (
-        <Modal
-          selectedCertificate={selectedCertificate}
-          onClose={handleClose}
-        ></Modal>
+        <Modal image={selectedCertificate} onClose={handleClose}></Modal>
       )}
     </section>
   );
@@ -199,7 +218,7 @@ function CertificationCard({ certificate, image, setSelectedCertificate }) {
   );
 }
 
-function Modal({ selectedCertificate, onClose }) {
+function Modal({ image, onClose }) {
   return (
     <>
       <div className="modal" onClick={onClose}>
@@ -207,7 +226,7 @@ function Modal({ selectedCertificate, onClose }) {
           &times;
         </Button>
 
-        <img src={selectedCertificate} alt="certificate"></img>
+        <img src={image} alt="certificate"></img>
       </div>
     </>
   );
