@@ -11,6 +11,7 @@ import supabase from "./assets/supabase-plain.svg";
 import github from "./assets/github-original.svg";
 import linkedin from "./assets/linkedin-plain.svg";
 import certificateJS from "./assets/zertifikat-javascript-WZ.png";
+import certificateJFD from "./assets/certificate-jlinnecke.png";
 
 import { useState } from "react";
 
@@ -27,7 +28,7 @@ const projects = [
   {
     title: "faraway",
     description:
-      " Lorem ipsum dolor sit amet, consetetur sadipscing elitr,  justo duo dolores et ea rebum. Stetclita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sitamet.t dolore magna aliquyam erat,sed diam voluptua.",
+      "Kleine packlisten app um sich richtig auf den urlaub vorzubereiten und um nichts zu vergessen!",
     skills: ["html", "css", "javascript", "react"],
     image: faraway,
     github: "https://github.com/JLinnecke/react-travel-list-course-project",
@@ -44,7 +45,13 @@ const skills = [
   { title: "Supabase", image: supabase },
 ];
 
-const certifications = [{ title: "JavaScript", image: certificateJS }];
+const certifications = [
+  {
+    title: "Developer Akademie Junior Frontend developer",
+    image: certificateJFD,
+  },
+  { title: "JavaScript", image: certificateJS },
+];
 
 function Button({ children, onClick, className }) {
   return (
@@ -72,11 +79,11 @@ function Header() {
   return (
     <div className="header">
       <img src={logo} alt="Logo"></img>
-      <h1>Portfolio-react-v1</h1>
+
       <div className="nav">
-        <p>Projects</p>
-        <p>Skills</p>
-        <p>Contact</p>
+        <a href="#projects">Projects</a>
+        <a href="#skills">Skills</a>
+        <a href="#contact">Contact</a>
       </div>
     </div>
   );
@@ -85,19 +92,41 @@ function Header() {
 function Hero() {
   return (
     <section className="hero">
-      <p>
-        Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy
-        eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam
-        voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet
-        clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit
-        amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
-        nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat,
-        sed diam voluptua. At vero eos et accusam et justo duo dolores et ea
-        rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem
-        ipsum dolor sit amet.
-      </p>
-      <img src={bewerbung} alt="J.Linnecke"></img>
-      <Button className="btn">Contact me</Button>
+      <div>
+        <h1>Junior Frontend Developer</h1>
+        <div className="hero-line"></div>
+        <h2 className="hero-name">Johannes Linnecke</h2>
+        <p>
+          Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
+          nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat,
+          sed diam voluptua. At vero eos et accusam et justo duo dolores et ea
+          rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem
+          ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur
+          sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et
+          dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam
+          et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea
+          takimata sanctus est Lorem ipsum dolor sit amet.
+        </p>
+
+        <div className="hero-buttons">
+          <Button className="btn">Projects</Button>
+          <Button className="btn">Contact me</Button>
+        </div>
+      </div>
+
+      <div className="hero-img">
+        <img src={bewerbung} alt="J.Linnecke" className="profile-img"></img>
+        <div className="hero-skills">
+          <a href="#skills">
+            {" "}
+            <img src={javascript} alt="JavaScript"></img>{" "}
+          </a>
+          <a href="#skills">
+            {" "}
+            <img src={react} alt="react"></img>
+          </a>
+        </div>
+      </div>
     </section>
   );
 }
@@ -118,8 +147,9 @@ function Projects() {
         );
 
   return (
-    <section className="project grid">
-      <div>
+    <section className="project" id="projects">
+      <h2>Projects</h2>
+      <div className="project-filter">
         <Button onClick={() => setSelectedSkill("ALL")}>All</Button>
         <Button onClick={() => setSelectedSkill("HTML")}>HTML</Button>
         <Button onClick={() => setSelectedSkill("CSS")}>CSS</Button>
@@ -130,14 +160,16 @@ function Projects() {
         <p>Aktiver filter: {selectedSkill}</p>
       </div>
 
-      {filteredProjects.map((project) => (
-        <ProjectCard
-          project={project}
-          key={project.title}
-          selectedProjectImage={selectedProjectImage}
-          setSelectedProjectImage={setSelectedProjectImage}
-        />
-      ))}
+      <div className="project-grid">
+        {filteredProjects.map((project) => (
+          <ProjectCard
+            project={project}
+            key={project.title}
+            selectedProjectImage={selectedProjectImage}
+            setSelectedProjectImage={setSelectedProjectImage}
+          />
+        ))}
+      </div>
       {selectedProjectImage && (
         <Modal image={selectedProjectImage} onClose={handleClose}></Modal>
       )}
@@ -161,7 +193,7 @@ function ProjectCard({
   return (
     <div className="card">
       <div className="sidebar-left">
-        <h1>{project.title}</h1>
+        <h3>{project.title}</h3>
         <p>{project.description}</p>
       </div>
       <div className="project-img">
@@ -192,17 +224,24 @@ function Certifications() {
 
   return (
     <section className="certificate">
-      {certifications.map((certificate) => (
-        <CertificationCard
-          certificate={certificate}
-          image={certificate.image}
-          key={certificate.title}
-          selectedCertificate={selectedCertificate}
-          setSelectedCertificate={setSelectedCertificate}
-        />
-      ))}
+      <div className="certificate-headline">
+        <h2>Zertifikate</h2>
+      </div>
+
+      <div className="certificate-list">
+        {certifications.map((certificate) => (
+          <CertificationCard
+            certificate={certificate}
+            image={certificate.image}
+            key={certificate.title}
+            selectedCertificate={selectedCertificate}
+            setSelectedCertificate={setSelectedCertificate}
+          />
+        ))}
+      </div>
+
       {selectedCertificate && (
-        <Modal image={selectedCertificate} onClose={handleClose}></Modal>
+        <Modal image={selectedCertificate} onClose={handleClose} />
       )}
     </section>
   );
@@ -210,11 +249,13 @@ function Certifications() {
 
 function CertificationCard({ certificate, image, setSelectedCertificate }) {
   return (
-    <img
-      src={image}
-      alt={certificate.title}
-      onClick={() => setSelectedCertificate(image)}
-    ></img>
+    <div className="certificate-img">
+      <img
+        src={image}
+        alt={certificate.title}
+        onClick={() => setSelectedCertificate(image)}
+      ></img>
+    </div>
   );
 }
 
@@ -235,7 +276,7 @@ function Modal({ image, onClose }) {
 function Skills() {
   return (
     <>
-      <h2>Skills</h2>
+      <h2 id="skills">Skills</h2>
       <div className="skills">
         {skills.map((skill) => (
           <Skill skill={skill} key={skill.title}></Skill>
@@ -256,7 +297,7 @@ function Skill({ skill }) {
 
 function Contact() {
   return (
-    <section className="contact">
+    <section className="contact" id="contact">
       <h2>Contact</h2>
       <div className="grid">
         <div className="sidebar-left">

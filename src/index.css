@@ -1,3 +1,120 @@
+/*FONTS*/
+
+/* syne-regular - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: "Syne";
+  font-style: normal;
+  font-weight: 400;
+  src: url("./assets/fonts/syne-v24-latin-regular.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+/* syne-500 - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: "Syne";
+  font-style: normal;
+  font-weight: 500;
+  src: url("./assets/fonts/syne-v24-latin-500.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+/* syne-600 - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: "Syne";
+  font-style: normal;
+  font-weight: 600;
+  src: url("./assets/fonts/syne-v24-latin-600.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+/* syne-700 - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: "Syne";
+  font-style: normal;
+  font-weight: 700;
+  src: url("./assets/fonts/syne-v24-latin-700.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+/* syne-800 - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: "Syne";
+  font-style: normal;
+  font-weight: 800;
+  src: url("./assets/fonts/syne-v24-latin-800.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+
+/* overpass-100 - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: "Overpass";
+  font-style: normal;
+  font-weight: 100;
+  src: url("./assets/fonts/overpass-v19-latin-100.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+/* overpass-200 - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: "Overpass";
+  font-style: normal;
+  font-weight: 200;
+  src: url("./assets/fonts/overpass-v19-latin-200.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+/* overpass-300 - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: "Overpass";
+  font-style: normal;
+  font-weight: 300;
+  src: url("./assets/fonts/overpass-v19-latin-300.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+/* overpass-regular - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: "Overpass";
+  font-style: normal;
+  font-weight: 400;
+  src: url("./assets/fonts/overpass-v19-latin-regular.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+/* overpass-500 - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: "Overpass";
+  font-style: normal;
+  font-weight: 500;
+  src: url("./assets/fonts/overpass-v19-latin-500.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+/* overpass-600 - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: "Overpass";
+  font-style: normal;
+  font-weight: 600;
+  src: url("./assets/fonts/overpass-v19-latin-600.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+/* overpass-700 - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: "Overpass";
+  font-style: normal;
+  font-weight: 700;
+  src: url("./assets/fonts/overpass-v19-latin-700.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+/* overpass-800 - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: "Overpass";
+  font-style: normal;
+  font-weight: 800;
+  src: url("./assets/fonts/overpass-v19-latin-800.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+/* overpass-900 - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: "Overpass";
+  font-style: normal;
+  font-weight: 900;
+  src: url("./assets/fonts/overpass-v19-latin-900.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+
+/*PORTFOLIO*/
 body {
   margin: 0;
   font-family:
@@ -5,7 +122,7 @@ body {
     "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: #151b54;
+  background-color: #fffcf3;
 }
 
 code {
@@ -17,22 +134,71 @@ code {
   box-sizing: border-box;
 }
 
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: syne;
+}
+
+h1 {
+  font-size: 64px;
+  font-weight: 800;
+  line-height: 64px;
+  text-align: center;
+  margin: 0;
+}
+
+h2 {
+  font-size: 40px;
+  font-weight: 700;
+  line-height: 44px;
+  color: #00bc8f;
+}
+
+p,
+span,
+a {
+  font-family: overpass;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
 .btn {
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 2rem;
+
+  width: fit-content;
+  min-width: 180px;
+
+  padding: 0.5rem 1.5rem;
+
+  font-size: 1.25rem;
   color: black;
-  border: none;
-  background-color: aliceblue;
+  background-color: transparent;
+
+  border: 2px solid black;
   border-radius: 2rem;
+
+  cursor: pointer;
+
+  transition: transform 0.2s ease;
+}
+
+.btn:hover {
+  transform: scale(1.05);
 }
 
 .app {
   width: 100%;
   max-width: 1200px;
   margin: 0 auto;
-  color: white;
 }
 
 .header {
@@ -54,7 +220,7 @@ code {
 
 a:hover {
   cursor: pointer;
-  color: antiquewhite;
+  transform: scale(1.05);
 }
 
 .hero {
@@ -67,39 +233,112 @@ a:hover {
   box-sizing: border-box;
 }
 
-.hero img {
+.hero-name {
+  text-align: center;
+  margin-top: 0;
+  margin-bottom: 2rem;
+}
+
+.hero-line {
+  width: 80%;
+  height: 2px;
+  background-color: black;
+  margin: 1.5rem auto;
+}
+
+.hero-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.hero-img {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-self: end;
+}
+
+.profile-img {
   max-width: 100%;
   width: 360px;
   border-radius: 2rem;
-  justify-self: center;
+  border: 2px solid black;
 }
 
-.project {
+.hero-skills {
   display: flex;
   justify-content: center;
   align-items: center;
+  gap: 1.5rem;
+  margin-top: 1rem;
+  width: 100%;
+}
+
+.hero-skills img {
+  width: 3rem;
+  height: 3rem;
+  object-fit: contain;
+}
+
+/* PROJECTS */
+
+.project {
+  width: 100%;
+  padding: 4rem 2rem;
+}
+
+.project-filter {
+  margin-bottom: 4rem;
+}
+
+.project-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 6rem;
+  width: 100%;
 }
 
 .card {
   display: grid;
-  grid-template-columns: 2fr 2fr;
+  grid-template-columns: 1fr 1.4fr;
   gap: 2rem;
   align-items: center;
-  width: 100%;
-  padding: 4rem 2rem;
-  box-sizing: border-box;
-  border: 1px solid antiquewhite;
+  width: 72%;
+  padding: 3rem;
+  border: 3px solid black;
   border-radius: 2rem;
-  background-color: antiquewhite;
   color: black;
+  background-color: #f3eee2;
+}
+
+.card:nth-child(odd) {
+  align-self: flex-end;
+}
+
+.card:nth-child(even) {
+  align-self: flex-start;
 }
 
 .sidebar-left {
   display: flex;
-  justify-content: center;
-  text-align: center;
   flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+
   width: 100%;
+  text-align: left;
+}
+
+.sidebar-left h1 {
+  margin-top: 0;
+  margin-bottom: 1rem;
+}
+
+.sidebar-left p {
+  margin: 0;
+  line-height: 1.5;
 }
 
 .sidebar-right {
@@ -115,19 +354,31 @@ a:hover {
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  width: 100%;
 }
 
 .project-img img {
-  width: 25rem;
+  width: 100%;
+  max-width: 28rem;
+  height: auto;
+  cursor: pointer;
+  border-radius: 1rem;
+}
+
+.project-img img:hover {
+  transform: scale(1.02);
 }
 
 .btn-project {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 8px;
-  margin-top: 8px;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 1rem;
 }
+
+/* SKILLS */
 
 .skills {
   display: grid;
@@ -145,11 +396,15 @@ a:hover {
   width: 6rem;
 }
 
+/* CONTACT */
+
 .contact {
   display: flex;
   justify-content: center;
   align-items: center;
 }
+
+/* FOOTER */
 
 .footer {
   display: flex;
@@ -167,6 +422,8 @@ a:hover {
   width: 6rem;
 }
 
+/* GENERIC GRID */
+
 .grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -177,18 +434,55 @@ a:hover {
   box-sizing: border-box;
 }
 
-.certificate img {
-  width: 16rem;
+/* CERTIFICATE */
+
+.certificate {
+  width: 100%;
+  padding: 4rem 2rem;
 }
+
+.certificate-headline {
+  margin-bottom: 2rem;
+}
+
+.certificate-list {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.certificate-img {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.certificate-img img {
+  width: 16rem;
+  height: auto;
+  display: block;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.certificate-img img:hover {
+  transform: scale(1.05);
+}
+
+/* MODAL */
 
 .modal {
   position: fixed;
   z-index: 1;
   left: 0;
   top: 0;
+
   width: 100vw;
   height: 100vh;
+
   background-color: rgba(0, 0, 0, 0.5);
+
   display: flex;
   justify-content: center;
   align-items: center;
@@ -205,9 +499,11 @@ a:hover {
   z-index: 3;
   top: 2rem;
   right: 4rem;
+
   font-size: 2.5rem;
   color: black;
   cursor: pointer;
+
   background-color: aliceblue;
   border-radius: 2rem;
   border: none;
