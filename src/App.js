@@ -1,50 +1,70 @@
 import logo from "./assets/logo.png";
 import bewerbung from "./assets/bewerbung-1.jpg";
-import eatnsplit from "./assets/eat-n-split.png";
-import faraway from "./assets/faraway.png";
-import css from "./assets/css3-plain.svg";
-import html from "./assets/html5-plain.svg";
-import javascript from "./assets/javascript-plain.svg";
-import mongodb from "./assets/mongodb-plain.svg";
-import react from "./assets/react-original.svg";
-import supabase from "./assets/supabase-plain.svg";
-import github from "./assets/github-original.svg";
-import linkedin from "./assets/linkedin-plain.svg";
+
 import certificateJS from "./assets/zertifikat-javascript-WZ.png";
 import certificateJFD from "./assets/certificate-jlinnecke.png";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 const projects = [
   {
-    title: "eat-n-split",
+    title: "Join",
     description:
-      " Lorem ipsum dolor sit amet, consetetur sadipscing elitr,  ipsum dolor sitamet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diamnonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat,sed diam voluptua.",
+      "Kanban-Board zum Verwalten und Organisieren von Tasks. Aufgaben und Kontakte können selbstständig angelegt und verwaltet werden. Firebase dient als Backend für Datenspeicherung und Authentifizierung.",
     skills: ["html", "css", "javascript"],
-    image: eatnsplit,
-    github: "https://github.com/repos",
-    // https://github.com/JLinnecke/react-app-eat-n-split
-    // https://github.com/repos
-    demo: "https://github.com/JLinnecke",
+    images: [
+      "/imgs/join/join1.webp",
+      "/imgs/join/join2.webp",
+      "/imgs/join/join3.webp",
+    ],
+    github: "https://github.com/JLinnecke/join-kanban-board",
+    demo: "https://join-kanban-board.netlify.app/index.html",
   },
   {
-    title: "faraway",
+    title: "SkyRadar",
     description:
-      "Kleine packlisten app um sich richtig auf den urlaub vorzubereiten und um nichts zu vergessen!",
+      "Wetter-App, die Daten aus verschiedenen APIs verarbeitet, um aktuelle Wetterdaten und zukünftige Wettervorhersagen anzuzeigen.",
     skills: ["html", "css", "javascript", "react"],
-    image: faraway,
-    github: "https://github.com/JLinnecke/react-travel-list-course-project",
-    demo: "https://github.com/JLinnecke",
+    images: ["/imgs/skyradar/skyradar1.webp", "/imgs/skyradar/skyradar2.webp"],
+    github: "https://github.com/JLinnecke/weather-app",
+    demo: "https://skyradar-app.netlify.app/",
   },
 ];
 
 const skills = [
-  { title: "HTML", image: html },
-  { title: "CSS", image: css },
-  { title: "JavaScript", image: javascript },
-  { title: "React", image: react, status: "inProgress" },
-  { title: "MongoDB", image: mongodb, status: "upcoming" },
-  { title: "Supabase", image: supabase, status: "upcoming" },
+  { title: "HTML", image: "/imgs/skills/html5-plain.svg" },
+  { title: "CSS", image: "/imgs/skills/css3-plain.svg" },
+  { title: "JavaScript", image: "/imgs/skills/javascript-plain.svg" },
+  {
+    title: "React",
+    image: "/imgs/skills/react-original.svg",
+    status: "inProgress",
+  },
+  {
+    title: "Next.Js",
+    image: "/imgs/skills/nextjs-original.svg",
+    status: "upcoming",
+  },
+  {
+    title: "Supabase",
+    image: "/imgs/skills/supabase-plain.svg",
+    status: "upcoming",
+  },
+  {
+    title: "TypeScript",
+    image: "/imgs/skills/typescript-original.svg",
+    status: "upcoming",
+  },
+  {
+    title: "PHP",
+    image: "/imgs/skills/php-plain.svg",
+    status: "upcoming",
+  },
+  {
+    title: "MySQL",
+    image: "/imgs/skills/mysql-original.svg",
+    status: "upcoming",
+  },
 ];
 
 const certifications = [
@@ -52,7 +72,10 @@ const certifications = [
     title: "Developer Akademie Junior Frontend developer",
     image: certificateJFD,
   },
-  { title: "JavaScript", image: certificateJS },
+  {
+    title: "JavaScript",
+    image: certificateJS,
+  },
 ];
 
 function Button({ children, onClick, className }) {
@@ -67,11 +90,15 @@ export default function App() {
   return (
     <div className="app">
       <Header />
-      <Hero />
-      <Projects />
-      <Certifications />
-      <Skills />
-      <Contact />
+
+      <main>
+        <Hero />
+        <Projects />
+        <Certifications />
+        <Skills />
+        <Contact />
+      </main>
+
       <Footer />
     </div>
   );
@@ -79,25 +106,28 @@ export default function App() {
 
 function Header() {
   return (
-    <div className="header">
-      <img src={logo} alt="Logo"></img>
+    <header className="header">
+      <img src={logo} alt="Logo" />
 
-      <div className="nav">
+      <nav className="nav">
         <a href="#projects">Projects</a>
         <a href="#skills">Skills</a>
         <a href="#contact">Contact</a>
-      </div>
-    </div>
+      </nav>
+    </header>
   );
 }
 
 function Hero() {
   return (
     <section className="hero">
-      <div>
+      <div className="hero-content">
         <h1>Junior Frontend Developer</h1>
-        <div className="hero-line"></div>
+
+        <div className="hero-line" />
+
         <h2 className="hero-name">Johannes Linnecke</h2>
+
         <p>
           Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
           nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat,
@@ -111,21 +141,26 @@ function Hero() {
         </p>
 
         <div className="hero-buttons">
-          <Button className="btn">Projects</Button>
-          <Button className="btn">Contact me</Button>
+          <a className="btn" href="#projects">
+            Projects
+          </a>
+
+          <a className="btn" href="#contact">
+            Contact me
+          </a>
         </div>
       </div>
 
-      <div className="hero-img">
-        <img src={bewerbung} alt="J.Linnecke" className="profile-img"></img>
+      <div className="hero-visual">
+        <img src={bewerbung} alt="J. Linnecke" className="profile-img" />
+
         <div className="hero-skills">
           <a href="#skills">
-            {" "}
-            <img src={javascript} alt="JavaScript"></img>{" "}
+            <img src="/imgs/skills/javascript-plain.svg" alt="JavaScript" />
           </a>
+
           <a href="#skills">
-            {" "}
-            <img src={react} alt="react"></img>
+            <img src="/imgs/skills/react-original.svg" alt="React" />
           </a>
         </div>
       </div>
@@ -136,9 +171,11 @@ function Hero() {
 function Projects() {
   const [selectedSkill, setSelectedSkill] = useState("ALL");
   const [selectedProjectImage, setSelectedProjectImage] = useState(null);
+  const [selectedProject, setSelectedProject] = useState(null);
 
   function handleClose() {
     setSelectedProjectImage(null);
+    setSelectedProject(null);
   }
 
   const filteredProjects =
@@ -149,41 +186,58 @@ function Projects() {
         );
 
   return (
-    <section className="project" id="projects">
+    <section className="section projects" id="projects">
       <h2>Projects</h2>
+
       <div className="project-filter">
-        <Button onClick={() => setSelectedSkill("ALL")}>All</Button>
-        <Button onClick={() => setSelectedSkill("HTML")}>HTML</Button>
-        <Button onClick={() => setSelectedSkill("CSS")}>CSS</Button>
-        <Button onClick={() => setSelectedSkill("JavaScript")}>
-          JavaScript
-        </Button>
-        <Button onClick={() => setSelectedSkill("React")}>React</Button>
-        <p>Aktiver filter: {selectedSkill}</p>
+        {["ALL", "HTML", "CSS", "JavaScript", "React"].map((skill) => (
+          <Button
+            key={skill}
+            className={`btn filter ${selectedSkill === skill ? "active" : ""}`}
+            onClick={() => setSelectedSkill(skill)}
+          >
+            {skill === "ALL" ? "All" : skill}
+          </Button>
+        ))}
       </div>
 
-      <div className="project-grid">
+      <div className="project-list">
         {filteredProjects.map((project) => (
           <ProjectCard
             project={project}
             key={project.title}
-            selectedProjectImage={selectedProjectImage}
             setSelectedProjectImage={setSelectedProjectImage}
+            setSelectedProject={setSelectedProject}
           />
         ))}
       </div>
-      {selectedProjectImage && (
-        <Modal image={selectedProjectImage} onClose={handleClose}></Modal>
+
+      {selectedProjectImage && selectedProject && (
+        <Modal
+          image={selectedProjectImage}
+          images={selectedProject.images}
+          onClose={handleClose}
+        />
       )}
     </section>
   );
 }
 
-function ProjectCard({
-  project,
-  selectedProjectImage,
-  setSelectedProjectImage,
-}) {
+function ProjectCard({ project, setSelectedProjectImage, setSelectedProject }) {
+  const [imageIndex, setImageIndex] = useState(0);
+
+  useEffect(() => {
+    if (project.images.length <= 1) return;
+
+    const interval = setInterval(() => {
+      setImageIndex((currentIndex) =>
+        currentIndex === project.images.length - 1 ? 0 : currentIndex + 1,
+      );
+    }, 4000);
+
+    return () => clearInterval(interval);
+  }, [project.images.length]);
+
   function handleGitHub() {
     window.open(project.github, "_blank");
   }
@@ -193,27 +247,54 @@ function ProjectCard({
   }
 
   return (
-    <div className="card">
-      <div className="sidebar-left">
+    <article className="project-card">
+      <div className="project-info">
         <h3>{project.title}</h3>
+
+        <div className="project-skills">
+          {project.skills.map((skill) => (
+            <span key={skill}>{skill}</span>
+          ))}
+        </div>
+
         <p>{project.description}</p>
       </div>
-      <div className="project-img">
-        <img
-          src={project.image}
-          alt={project.title}
-          onClick={() => setSelectedProjectImage(project.image)}
-        />
-        <div className="btn-project">
+
+      <div className="project-media">
+        <div className="project-image-wrap">
+          <img
+            src={project.images[imageIndex]}
+            alt={project.title}
+            onClick={() => {
+              setSelectedProjectImage(project.images[imageIndex]);
+              setSelectedProject(project);
+            }}
+          />
+
+          <div className="image-dots">
+            {project.images.map((_, index) => (
+              <button
+                type="button"
+                aria-label={`Bild ${index + 1} anzeigen`}
+                key={index}
+                className={`image-dot ${index === imageIndex ? "active" : ""}`}
+                onClick={() => setImageIndex(index)}
+              />
+            ))}
+          </div>
+        </div>
+
+        <div className="project-buttons">
           <Button className="btn" onClick={handleLiveDemo}>
             Live demo
           </Button>
+
           <Button className="btn" onClick={handleGitHub}>
             GitHub
           </Button>
         </div>
       </div>
-    </div>
+    </article>
   );
 }
 
@@ -225,66 +306,122 @@ function Certifications() {
   }
 
   return (
-    <section className="certificate">
-      <div className="certificate-headline">
-        <h2>Zertifikate</h2>
-      </div>
+    <section className="section certificates">
+      <h2>Zertifikate</h2>
 
       <div className="certificate-list">
         {certifications.map((certificate) => (
           <CertificationCard
             certificate={certificate}
-            image={certificate.image}
             key={certificate.title}
-            selectedCertificate={selectedCertificate}
             setSelectedCertificate={setSelectedCertificate}
           />
         ))}
       </div>
 
       {selectedCertificate && (
-        <Modal image={selectedCertificate} onClose={handleClose} />
+        <Modal
+          image={selectedCertificate}
+          images={certifications.map((certificate) => certificate.image)}
+          onClose={handleClose}
+        />
       )}
     </section>
   );
 }
 
-function CertificationCard({ certificate, image, setSelectedCertificate }) {
+function CertificationCard({ certificate, setSelectedCertificate }) {
   return (
-    <div className="certificate-img">
-      <img
-        src={image}
-        alt={certificate.title}
-        onClick={() => setSelectedCertificate(image)}
-      ></img>
-    </div>
+    <button
+      type="button"
+      className="certificate-card"
+      onClick={() => setSelectedCertificate(certificate.image)}
+    >
+      <img src={certificate.image} alt={certificate.title} />
+    </button>
   );
 }
 
-function Modal({ image, onClose }) {
-  return (
-    <>
-      <div className="modal" onClick={onClose}>
-        <Button className="close" onClick={onClose}>
-          &times;
-        </Button>
+function Modal({ image, images, onClose }) {
+  const [currentIndex, setCurrentIndex] = useState(
+    images ? images.indexOf(image) : 0,
+  );
 
-        <img src={image} alt="certificate"></img>
-      </div>
-    </>
+  function handlePrevious(e) {
+    e?.stopPropagation();
+
+    setCurrentIndex((index) => (index === 0 ? images.length - 1 : index - 1));
+  }
+
+  function handleNext(e) {
+    e?.stopPropagation();
+
+    setCurrentIndex((index) => (index === images.length - 1 ? 0 : index + 1));
+  }
+
+  useEffect(() => {
+    function handleKeyDown(e) {
+      if (e.key === "Escape") {
+        onClose();
+      }
+
+      if (e.key === "ArrowLeft") {
+        handlePrevious();
+      }
+
+      if (e.key === "ArrowRight") {
+        handleNext();
+      }
+    }
+
+    window.addEventListener("keydown", handleKeyDown);
+
+    return () => {
+      window.removeEventListener("keydown", handleKeyDown);
+    };
+  }, [onClose]);
+
+  return (
+    <div className="modal" onClick={onClose}>
+      <Button className="modal-close" onClick={onClose}>
+        &times;
+      </Button>
+
+      {images?.length > 1 && (
+        <Button
+          className="modal-arrow modal-arrow-left"
+          onClick={handlePrevious}
+        >
+          &#10094;
+        </Button>
+      )}
+
+      <img
+        src={images ? images[currentIndex] : image}
+        alt="Vergrößerte Ansicht"
+        onClick={(e) => e.stopPropagation()}
+      />
+
+      {images?.length > 1 && (
+        <Button className="modal-arrow modal-arrow-right" onClick={handleNext}>
+          &#10095;
+        </Button>
+      )}
+    </div>
   );
 }
 
 function Skills() {
   return (
-    <>
-      <h2 id="skills">Skills</h2>
-      <div className="skills">
+    <section className="section skills-section" id="skills">
+      <h2>Skills</h2>
+
+      <div className="skills-grid">
         {skills.map((skill) => (
-          <Skill skill={skill} key={skill.title}></Skill>
+          <Skill skill={skill} key={skill.title} />
         ))}
       </div>
-    </>
+    </section>
   );
 }
 
@@ -292,9 +429,11 @@ function Skill({ skill }) {
   return (
     <div className={`skill-card ${skill.status || ""}`}>
       <img src={skill.image} alt={skill.title} />
+
       <p>{skill.title}</p>
 
       {skill.status === "inProgress" && <span>In Progress</span>}
+
       {skill.status === "upcoming" && <span>Upcoming Skill</span>}
     </div>
   );
@@ -308,18 +447,23 @@ function Contact() {
   }
 
   return (
-    <section className="contact" id="contact">
+    <section className="section contact-section" id="contact">
       <h2>Contact</h2>
-      <div className="grid">
-        <div className="sidebar-left">
-          <h3>Contact me</h3>
-          <a href="mailto:mail@example.de">E-Mail schreiben</a>
+
+      <div className="contact-grid">
+        <div className="contact-item">
+          <h3>E-mail</h3>
+
+          <a href={`mailto:${email}`}>E-Mail schreiben</a>
+
           <Button className="copy-btn" onClick={handleCopyEmail}>
             E-Mail kopieren
           </Button>
         </div>
-        <div className="sidebar-right">
+
+        <div className="contact-item">
           <h3>Phone</h3>
+
           <a href="tel:+4915165934150">Call me</a>
         </div>
       </div>
@@ -329,11 +473,21 @@ function Contact() {
 
 function Footer() {
   return (
-    <footer className="footer grid">
-      <p>Impressum</p>
-      <div className="icons">
-        <img src={github} alt="GitHub"></img>
-        <img src={linkedin} alt="LinkedIn"></img>
+    <footer className="footer">
+      <div className="footer-legal">
+        <a href="/impressum.html">Impressum</a>
+        <a href="/datenschutz.html">Datenschutz</a>
+        <span>© 2026 Johannes Linnecke</span>
+      </div>
+
+      <div className="footer-icons">
+        <a href="https://github.com/JLinnecke" target="_blank" rel="noreferrer">
+          <img src="/imgs/skills/github-original.svg" alt="GitHub" />
+        </a>
+
+        <a href="https://www.linkedin.com" target="_blank" rel="noreferrer">
+          <img src="/imgs/skills/linkedin-plain.svg" alt="LinkedIn" />
+        </a>
       </div>
     </footer>
   );
