@@ -195,6 +195,23 @@ a {
   transform: scale(1.05);
 }
 
+.copy-btn {
+  background-color: #00b894;
+  color: white;
+  border: none;
+  border-radius: 0.4rem;
+  padding: 0.35rem 0.7rem;
+  margin-top: 8px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.copy-btn:hover {
+  transform: translateY(-2px);
+  opacity: 0.85;
+}
+
 .app {
   width: 100%;
   max-width: 1200px;
@@ -396,6 +413,20 @@ a:hover {
   width: 6rem;
 }
 
+.skill-card.inProgress {
+  opacity: 0.6;
+  filter: grayscale(5%);
+}
+
+.skill-card.upcoming {
+  opacity: 0.3;
+  filter: grayscale(100%);
+}
+
+.skill-card span {
+  font-size: 0.8rem;
+}
+
 /* CONTACT */
 
 .contact {
@@ -428,7 +459,7 @@ a:hover {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 2rem;
-  align-items: center;
+  align-items: start;
   width: 100%;
   padding: 4rem 2rem;
   box-sizing: border-box;

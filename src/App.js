@@ -22,7 +22,9 @@ const projects = [
       " Lorem ipsum dolor sit amet, consetetur sadipscing elitr,  ipsum dolor sitamet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diamnonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat,sed diam voluptua.",
     skills: ["html", "css", "javascript"],
     image: eatnsplit,
-    github: "https://github.com/JLinnecke/react-app-eat-n-split",
+    github: "https://github.com/repos",
+    // https://github.com/JLinnecke/react-app-eat-n-split
+    // https://github.com/repos
     demo: "https://github.com/JLinnecke",
   },
   {
@@ -40,9 +42,9 @@ const skills = [
   { title: "HTML", image: html },
   { title: "CSS", image: css },
   { title: "JavaScript", image: javascript },
-  { title: "React", image: react },
-  { title: "MongoDB", image: mongodb },
-  { title: "Supabase", image: supabase },
+  { title: "React", image: react, status: "inProgress" },
+  { title: "MongoDB", image: mongodb, status: "upcoming" },
+  { title: "Supabase", image: supabase, status: "upcoming" },
 ];
 
 const certifications = [
@@ -288,14 +290,23 @@ function Skills() {
 
 function Skill({ skill }) {
   return (
-    <div className="skill-card">
-      <img src={skill.image} alt={skill.title}></img>
+    <div className={`skill-card ${skill.status || ""}`}>
+      <img src={skill.image} alt={skill.title} />
       <p>{skill.title}</p>
+
+      {skill.status === "inProgress" && <span>In Progress</span>}
+      {skill.status === "upcoming" && <span>Upcoming Skill</span>}
     </div>
   );
 }
 
 function Contact() {
+  const email = "jlinnecke@gmail.com";
+
+  function handleCopyEmail() {
+    navigator.clipboard.writeText(email);
+  }
+
   return (
     <section className="contact" id="contact">
       <h2>Contact</h2>
@@ -303,10 +314,13 @@ function Contact() {
         <div className="sidebar-left">
           <h3>Contact me</h3>
           <a href="mailto:mail@example.de">E-Mail schreiben</a>
+          <Button className="copy-btn" onClick={handleCopyEmail}>
+            E-Mail kopieren
+          </Button>
         </div>
         <div className="sidebar-right">
           <h3>Phone</h3>
-          <a href="tel:+4954641654564">0541654161641</a>
+          <a href="tel:+4915165934150">Call me</a>
         </div>
       </div>
     </section>
