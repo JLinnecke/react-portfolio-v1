@@ -4,6 +4,7 @@ import bewerbung from "./assets/bewerbung-1.jpg";
 import certificateJS from "./assets/zertifikat-javascript-WZ.png";
 import certificateJFD from "./assets/certificate-jlinnecke.png";
 
+import "./legal.css";
 import Impressum from "./pages/impressum.js";
 import Datenschutz from "./pages/datenschutz.js";
 

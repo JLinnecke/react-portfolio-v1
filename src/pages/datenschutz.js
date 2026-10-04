@@ -1,5 +1,3 @@
-import "../legal.css";
-
 function Datenschutz() {
   return (
     <main className="legal-page">

@@ -1,5 +1,3 @@
-import "../legal.css";
-
 function Impressum() {
   return (
     <main className="legal-page">
