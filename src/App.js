@@ -501,7 +501,11 @@ function Footer() {
           <img src="/imgs/skills/github-original.svg" alt="GitHub" />
         </a>
 
-        <a href="https://www.linkedin.com" target="_blank" rel="noreferrer">
+        <a
+          href="https://www.linkedin.com/in/johannes-linnecke/"
+          target="_blank"
+          rel="noreferrer"
+        >
           <img src="/imgs/skills/linkedin-plain.svg" alt="LinkedIn" />
         </a>
       </div>
