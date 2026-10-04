@@ -82,14 +82,6 @@ const certifications = [
   },
 ];
 
-function Button({ children, onClick, className }) {
-  return (
-    <button className={className} onClick={onClick}>
-      {children}
-    </button>
-  );
-}
-
 export default function App() {
   if (window.location.pathname === "/impressum") {
     return <Impressum />;
@@ -141,16 +133,30 @@ function Hero() {
         <h2 className="hero-name">Johannes Linnecke</h2>
 
         <p>
-          Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
-          nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat,
-          sed diam voluptua. At vero eos et accusam et justo duo dolores et ea
-          rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem
-          ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur
-          sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et
-          dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam
-          et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea
-          takimata sanctus est Lorem ipsum dolor sit amet.
+          Nach zwölf Jahren bei der Bundeswehr und meiner Ausbildung zum
+          Fachinformatiker für Systemintegration habe ich mich beruflich neu in
+          Richtung Webentwicklung orientiert. Seit 2023 bilde ich mich
+          kontinuierlich weiter und habe meinen Schwerpunkt auf moderne
+          Frontend-Entwicklung mit JavaScript und React gelegt. Mein Ziel ist
+          der professionelle Einstieg in die Web- und Softwareentwicklung, bei
+          dem ich meine bisherigen Kenntnisse einbringen und mich fachlich
+          kontinuierlich weiterentwickeln kann.
         </p>
+
+        <div className="hero-icons">
+          <div className="hero-info-item">
+            <img
+              src="/imgs/icons/location.webp"
+              alt="location Bad Bodenteich"
+            />
+            <span>Bad Bodenteich</span>
+          </div>
+
+          <div className="hero-info-item">
+            <img src="/imgs/icons/work.webp" alt="work Remote / Hybrid" />
+            <span>Remote / Hybrid</span>
+          </div>
+        </div>
 
         <div className="hero-buttons">
           <a className="btn" href="#projects">
@@ -484,6 +490,14 @@ function Contact() {
         </div>
       </div>
     </section>
+  );
+}
+
+function Button({ children, onClick, className }) {
+  return (
+    <button className={className} onClick={onClick}>
+      {children}
+    </button>
   );
 }
 
