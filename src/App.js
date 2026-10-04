@@ -366,11 +366,15 @@ function Modal({ image, images, onClose }) {
       }
 
       if (e.key === "ArrowLeft") {
-        handlePrevious();
+        setCurrentIndex((index) =>
+          index === 0 ? images.length - 1 : index - 1,
+        );
       }
 
       if (e.key === "ArrowRight") {
-        handleNext();
+        setCurrentIndex((index) =>
+          index === images.length - 1 ? 0 : index + 1,
+        );
       }
     }
 
@@ -379,7 +383,7 @@ function Modal({ image, images, onClose }) {
     return () => {
       window.removeEventListener("keydown", handleKeyDown);
     };
-  }, [onClose]);
+  }, [onClose, images.length]);
 
   return (
     <div className="modal" onClick={onClose}>
