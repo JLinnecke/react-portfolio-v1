@@ -4,6 +4,9 @@ import bewerbung from "./assets/bewerbung-1.jpg";
 import certificateJS from "./assets/zertifikat-javascript-WZ.png";
 import certificateJFD from "./assets/certificate-jlinnecke.png";
 
+import Impressum from "./pages/impressum.js";
+import Datenschutz from "./pages/datenschutz.js";
+
 import { useEffect, useState } from "react";
 
 const projects = [
@@ -87,6 +90,14 @@ function Button({ children, onClick, className }) {
 }
 
 export default function App() {
+  if (window.location.pathname === "/impressum") {
+    return <Impressum />;
+  }
+
+  if (window.location.pathname === "/datenschutz") {
+    return <Datenschutz />;
+  }
+
   return (
     <div className="app">
       <Header />
@@ -479,8 +490,8 @@ function Footer() {
   return (
     <footer className="footer">
       <div className="footer-legal">
-        <a href="/impressum.html">Impressum</a>
-        <a href="/datenschutz.html">Datenschutz</a>
+        <a href="/impressum">Impressum</a>
+        <a href="/datenschutz">Datenschutz</a>
         <span>© 2026 Johannes Linnecke</span>
       </div>
 
